@@ -6,13 +6,13 @@ import {
   twitterIcon,
   mapIcon,
   emailIcon,
-  userIcon,
-  HomeIcon,
-  HeartIcon,
-  BookingSelected,
-  PanditIcon,
+  userIcon
+  // HomeIcon,
+  // HeartIcon,
+  // BookingSelected,
+  // PanditIcon,
 } from "../../assets/index.js";
-import { Menu } from "lucide-react";
+import { CalendarCheck, Heart, House, Menu, UserRoundCheck, X } from "lucide-react";
 
 const Header = () => {
   const [show, setShow] = useState(false);
@@ -21,7 +21,7 @@ const Header = () => {
   const handleShow = () => setShow(true);
 
   return (
-    <header className=" text-white">
+    <header className="text-white">
       {/* Main Header */}
       <div className="container-fluid mx-auto">
         <div className="flex flex-wrap justify-between items-center p-4">
@@ -82,7 +82,7 @@ const Header = () => {
             aria-expanded={show}
           >
             <span className="block w-6 h-6 text-white">
-            <Menu />
+              <Menu />
             </span>
           </button>
           <ul className="flex gap-6 navbar-brand">
@@ -112,22 +112,22 @@ const Header = () => {
 
       {/* Offcanvas Menu */}
       <div
-        className={`fixed inset-y-0 left-0 w-64 bg-white color shadow-lg transform ${
+        className={`fixed inset-y-0 left-0 w-72 bg-white color shadow-lg transform ${
           show ? "translate-x-0" : "-translate-x-full"
         } transition-transform duration-300`}
       >
         <div className="flex justify-end p-3">
           <button onClick={handleClose} className="text-gray-500 offcanvas">
-            X
+          <X />
           </button>
         </div>
-        <ul className="p-4 space-y-4">
+        <ul className="p-4 space-y-4 offcanvas-List">
           <li>
             <a
               href="/"
               className="flex items-center text-gray-700 hover:text-blue-600"
             >
-              <img src="{HomeIcon}" alt="" /> Home
+              <House /> Home
             </a>
           </li>
           <li>
@@ -135,7 +135,7 @@ const Header = () => {
               href="/recommendation"
               className="flex items-center text-gray-700 hover:text-blue-600"
             >
-              <img src="{HeartIcon}" alt="" /> Personalized Recommendation
+              <Heart className="!w-[52px]" /> Personalized Recommendation
             </a>
           </li>
           <li>
@@ -143,7 +143,8 @@ const Header = () => {
               href="/venue-booking"
               className="flex items-center text-gray-700 hover:text-blue-600"
             >
-              <img src="{BookingSelected}" alt="" /> Venue Booking
+              <CalendarCheck />
+              Venue Booking
             </a>
           </li>
           <li>
@@ -151,15 +152,7 @@ const Header = () => {
               href="/pandit-booking"
               className="flex items-center text-gray-700 hover:text-blue-600"
             >
-              <img src="{PanditIcon}" alt="" /> Pandit Booking
-            </a>
-          </li>
-          <li>
-            <a
-              href="/vastu-detection"
-              className="flex items-center text-gray-700 hover:text-blue-600"
-            >
-              <i className="bi bi-person mr-2"></i> Vastu Detection
+              <UserRoundCheck /> Pandit Booking
             </a>
           </li>
         </ul>

@@ -17,22 +17,22 @@ const App = () => {
       <section>
         <HeroSection />
       </section>
-      <section className="mainSection">
+      <section className="mainSection w-full">
         <Services />
       </section>
-      <section className="mainSection">
+      <section className="mainSection w-full">
         <BestSellers />
       </section>
       <section className="mainSection relative z-0 w-full">
         <AboutUs />
       </section>
-      <section className="mainSection">
+      <section className="mainSection w-full">
         <Testimonial />
       </section>
-      <section className="mainSection">
+      <section className="mainSection w-full">
         <ContactSection />
       </section>
-      <section className="mainSection">
+      <section className="mainSection w-full">
         <Footer />
       </section>
     </main>

@@ -8,8 +8,17 @@ import PushparajImg from "./images/Pushparaj.jpg";
 import RudrakshImg from "./images/Rudraksh.jpg";
 import HandImg from "./images/hand.png";
 import AboutImg from "./images/about.png";
-import TestimonialImg from "./assets/images/testimonialBg.png";
+// import TestimonialImg from "./assets/images/testimonialBg.png";
 import DiceImg from "./assets/images/Dice.png";
+
+// Social Icons Images
+import facebookIcon from "./icons/Facebook.png";
+import linkedinIcon from "./icons/Linkedin.png";
+import instagramIcon from "./icons/Instagram.png";
+import twitterIcon from "./icons/TwitterX.png";
+import mapIcon from "./icons/GoogleMaps.png";
+import emailIcon from "./icons/Email.png";
+import userIcon from "./icons/user.png";
 
 export {
     // eslint-disable-next-line react-refresh/only-export-components
@@ -24,6 +33,20 @@ export {
     RudrakshImg,
     HandImg,
     AboutImg,
+    // TestimonialImg,
     DiceImg,
-    TestimonialImg
+    // eslint-disable-next-line react-refresh/only-export-components
+    facebookIcon,
+    // eslint-disable-next-line react-refresh/only-export-components
+    linkedinIcon,
+    // eslint-disable-next-line react-refresh/only-export-components
+    instagramIcon,
+    // eslint-disable-next-line react-refresh/only-export-components
+    twitterIcon,
+    // eslint-disable-next-line react-refresh/only-export-components
+    mapIcon,
+    // eslint-disable-next-line react-refresh/only-export-components
+    emailIcon,
+    // eslint-disable-next-line react-refresh/only-export-components
+    userIcon
 };

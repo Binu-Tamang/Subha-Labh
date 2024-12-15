@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -16,18 +20,15 @@
 a {
   font-weight: 500;
   color: #646cff;
-  text-decoration: inherit;
+  text-decoration: none !important;
 }
 a:hover {
   color: #535bf2;
 }
 
-body {
+ul{
+  padding: 0;
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
 }
 
 h1 {
@@ -65,4 +66,242 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+p{
+  color: #000;
+}
+/* banner css and login css here  */
+main {
+  position: relative;
+}
+header {
+  position: absolute;
+  width: 100%;
+  z-index: 2;
+}
+.mainSection {
+  padding-top: 3rem;
+}
+.loginBox {
+  text-align: right;
+  display: flex;
+  justify-content: end;
+}
+.loginBox ul li:nth-child(2) {
+  border-left: 2px solid #fff;
+  padding: 0 10px;
+}
+.loginBox ul li a {
+  color: #fff;
+}
+
+ul.list-unstyled li {
+  padding: 0 10px;
+  display: flex;
+}
+
+.mainHead {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+ul.list-unstyled.socialIcons img {
+  width: 22px;
+  height: 28px;
+}
+
+
+.banner-slider {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.slide.overlay {
+  /* opacity: 0.6; */
+  background: rgba(0, 0, 0, 0); 
+}
+
+ul.navbar-brand li a {
+  font-size: 14px;
+  color: #fff;
+}
+
+/* offcanvas css starts here */
+span.navbar-toggler-icon {
+  color: #fff !important;
+}
+
+/* about us css here  */
+img.hand-img {
+  height: 600px;
+  object-fit: cover;
+  position: absolute;
+  top: -55px;
+  left: 0;
+  z-index: -1;
+}
+
+/* slider banner testimonial css starts herre */
+button.slick-arrow.slick-prev {
+  left: 25px;
+}
+
+button.slick-arrow.slick-next {
+  right: 50px;
+}
+
+.slick-prev:before, .slick-next:before {
+  font-size: 50px !important;
+}
+.testi-Banner {
+  text-align: center;
+  width: 50%;
+}
+.slick-dots li.slick-active button:before {
+  font-size: 20px;
+  color: #fff !important;
+}
+
+.slick-dots li button:before {
+  font-size: 20px !important;
+  color: #D9D9D9 !important;
+}
+ul.slick-dots {
+  bottom: 20px;
+  z-index: 10;
+}
+/* about us css here  */
+img.hand-img {
+  height: 600px;
+  object-fit: cover;
+  position: absolute;
+  top: -55px;
+  left: 0;
+  z-index: -1;
+}
+/* =======================================
+   Footer CSS
+=========================================== */
+.footer-box p,
+ul.imp-link li a,
+ul.footer-contact li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  letter-spacing: 1px;
+  transition: 0.2s all ease;
+}
+
+ul.imp-link li,
+ul.footer-contact li {
+  list-style: none;
+  padding: 6px 0;
+}
+
+.footer-h {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+ul.footer-social-links {
+  display: flex;
+  padding-top: 10px;
+}
+
+ul.footer-social-links li {
+  list-style: none;
+  margin-right: 6px;
+}
+
+ul.footer-contact li {
+  display: flex;
+  align-items: center;
+}
+
+ul.footer-contact li i {
+  color: #fff;
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+ul.imp-link, ul.footer-contact {
+  padding: 0;
+  margin: 0;
+}
+.imp-link {
+  column-count: 2;  
+  column-gap: 20px;
+}
+/* =======================================
+CONTACT SECTION CSS STSRTS HERE 
+=========================================== */
+.main-contact-form {
+  padding: 50px 0;
+}
+
+.contact-div img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+.sec-title {
+  margin-bottom: 20px;
+}
+
+.sec-title__title {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.contact-form {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 10px;
+  /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ac76d8;
+  border-radius: 5px;
+}
+.contact-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+ul.footer-contact.contact-content li a {
+color: #000;
 }

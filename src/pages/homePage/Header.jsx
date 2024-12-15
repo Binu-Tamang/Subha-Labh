@@ -7,12 +7,9 @@ import {
   mapIcon,
   emailIcon,
   userIcon,
-  HomeIcon,
-  HeartIcon,
-  BookingSelected,
-  PanditIcon,
 } from "../../assets/index.js";
 import { Menu } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [show, setShow] = useState(false);
@@ -60,9 +57,10 @@ const Header = () => {
             <ul className="flex gap-4 items-center">
               <li className="flex items-center">
                 <img src={userIcon} alt="User Icon" className="w-6 h-6" />
-                <a href="/LoginForm" className="ml-2 hover:underline">
+                {/* <a href="/LoginForm" className="ml-2 hover:underline">
                   Log In
-                </a>
+                </a> */}
+                <Link to="/login">Log In</Link>
               </li>
               <li>
                 <a href="/register" className="hover:underline">
@@ -82,7 +80,7 @@ const Header = () => {
             aria-expanded={show}
           >
             <span className="block w-6 h-6 text-white">
-            <Menu />
+              <Menu />
             </span>
           </button>
           <ul className="flex gap-6 navbar-brand">

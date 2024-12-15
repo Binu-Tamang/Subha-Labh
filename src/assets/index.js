@@ -13,7 +13,7 @@ import AboutImg from "./images/about.png";
 
 // Social Icons Images
 import facebookIcon from "./icons/Facebook.png";
-import linkedinIcon from "./icons/Linkedin.png";
+import linkedinIcon from "./icons/LinkedIn.png";
 import instagramIcon from "./icons/Instagram.png";
 import twitterIcon from "./icons/TwitterX.png";
 import mapIcon from "./icons/GoogleMaps.png";
@@ -22,7 +22,8 @@ import userIcon from "./icons/user.png";
 import HomeIcon from "./icons/Home.png";
 import HeartIcon from "./icons/Heart.png";
 import BookingSelected from "./icons/BookingSelected.png";
-import PanditIcon from "./icons/Pundit.png";
+import PanditIcon from "./icons/pundit.png";
+import testimonialBgIcon from "./images/testimonialBg.png"
 
 export {
     mainBanner,
@@ -47,5 +48,6 @@ export {
     HomeIcon,
     HeartIcon,
     BookingSelected,
-    PanditIcon
+    PanditIcon,
+    testimonialBgIcon
 };

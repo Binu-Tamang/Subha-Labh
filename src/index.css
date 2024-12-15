@@ -305,3 +305,14 @@ textarea {
 ul.footer-contact.contact-content li a {
 color: #000;
 }
+/* =======================================
+testimonials
+=========================================== */
+.testimonialSection{
+    width: 100%;
+    height: 750px;
+    background-image: url(/src/assets/images/testimonialBg.png);
+    background-size: cover;
+    /* background-position: center center; */
+    display: flex !important;
+}

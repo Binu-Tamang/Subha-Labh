@@ -3,7 +3,7 @@ import React from "react";
 import {
     mainBanner,
     bannerBg
-  } from "../../assets/index";
+  } from "../../assets/index.js";
 
 function HeroSection() {
   return (

@@ -1,6 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import React from "react";
-import { PanditImg, VastuDetectionImg, VenueBookingImg } from "../../assets/index";
+import { PanditImg, VastuDetectionImg, VenueBookingImg } from "../../assets/index.js";
 import Card from "../../components/CardCompo/Card";
 
 const Services = () => {

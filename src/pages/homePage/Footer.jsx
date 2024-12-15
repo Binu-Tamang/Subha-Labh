@@ -1,11 +1,11 @@
 // eslint-disable-next-line no-unused-vars
 import React from "react";
-import { facebookIcon, linkedinIcon, instagramIcon, twitterIcon, mapIcon, emailIcon, userIcon } from "../../assets/index";
+import { facebookIcon, linkedinIcon, instagramIcon, twitterIcon, mapIcon, emailIcon, userIcon } from "../../assets/index.js";
 
 const Footer = () => {
   return (
-    <footer className="bg-gradient-to-r from-black via-purple-600 to-pink-500 py-10">
-      <div className="container mx-auto px-4">
+    <footer className="  w-full  bg-gradient-to-r from-black via-purple-600 to-pink-500 py-10">
+      <div className=" container mx-auto px-4">
         {/* Scroll up button - Uncomment if needed */}
         {/* <div id="errorContainer">
           <button

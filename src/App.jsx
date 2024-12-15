@@ -6,6 +6,7 @@ import Footer from "./pages/homePage/Footer";
 import Header from "./pages/homePage/Header";
 import HeroSection from "./pages/homePage/HeroSection";
 import Services from "./pages/homePage/Services";
+import Testimonial from "./pages/homePage/Testimonial";
 
 const App = () => {
   return (
@@ -22,8 +23,11 @@ const App = () => {
       <section className="mainSection">
         <BestSellers />
       </section>
-      <section className="mainSection relative z-0">
+      <section className="mainSection relative z-0 w-full">
         <AboutUs />
+      </section>
+      <section className="mainSection">
+        <Testimonial />
       </section>
       <section className="mainSection">
         <ContactSection />

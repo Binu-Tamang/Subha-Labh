@@ -7,7 +7,12 @@ import {
   mapIcon,
   emailIcon,
   userIcon,
-} from "../../assets/index";
+  HomeIcon,
+  HeartIcon,
+  BookingSelected,
+  PanditIcon,
+} from "../../assets/index.js";
+import { Menu } from "lucide-react";
 
 const Header = () => {
   const [show, setShow] = useState(false);
@@ -72,11 +77,13 @@ const Header = () => {
         <nav className="navbar navbar-dark flex items-center justify-start p-4">
           <button
             onClick={handleShow}
-            className="text-white hover:text-gray-300 focus:outline-none mr-4"
+            className="text-white hover:text-gray-300 focus:outline-none mr-4 bg-transparent"
             aria-controls="offcanvasMenu"
             aria-expanded={show}
           >
-            <span className="block w-6 h-6 bg-white"></span>
+            <span className="block w-6 h-6 text-white">
+            <Menu />
+            </span>
           </button>
           <ul className="flex gap-6 navbar-brand">
             <li>
@@ -105,7 +112,7 @@ const Header = () => {
 
       {/* Offcanvas Menu */}
       <div
-        className={`fixed inset-y-0 left-0 w-64 bg-white shadow-lg transform ${
+        className={`fixed inset-y-0 left-0 w-64 bg-white color shadow-lg transform ${
           show ? "translate-x-0" : "-translate-x-full"
         } transition-transform duration-300`}
       >
@@ -120,7 +127,7 @@ const Header = () => {
               href="/"
               className="flex items-center text-gray-700 hover:text-blue-600"
             >
-              <i className="bi bi-house-door mr-2"></i> Home
+              <img src="{HomeIcon}" alt="" /> Home
             </a>
           </li>
           <li>
@@ -128,7 +135,7 @@ const Header = () => {
               href="/recommendation"
               className="flex items-center text-gray-700 hover:text-blue-600"
             >
-              <i className="bi bi-heart mr-2"></i> Personalized Recommendation
+              <img src="{HeartIcon}" alt="" /> Personalized Recommendation
             </a>
           </li>
           <li>
@@ -136,7 +143,7 @@ const Header = () => {
               href="/venue-booking"
               className="flex items-center text-gray-700 hover:text-blue-600"
             >
-              <i className="bi bi-building mr-2"></i> Venue Booking
+              <img src="{BookingSelected}" alt="" /> Venue Booking
             </a>
           </li>
           <li>
@@ -144,7 +151,7 @@ const Header = () => {
               href="/pandit-booking"
               className="flex items-center text-gray-700 hover:text-blue-600"
             >
-              <i className="bi bi-person mr-2"></i> Pandit Booking
+              <img src="{PanditIcon}" alt="" /> Pandit Booking
             </a>
           </li>
           <li>
@@ -161,4 +168,4 @@ const Header = () => {
   );
 };
 
-export default Header; 
+export default Header;

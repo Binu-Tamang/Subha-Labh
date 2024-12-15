@@ -1,6 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import React from "react";
-import { HandImg, AboutImg } from "../../assets/index";
+import { HandImg, AboutImg } from "../../assets/index.js";
 
 const AboutUs = () => {
   return (

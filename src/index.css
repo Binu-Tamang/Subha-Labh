@@ -176,7 +176,35 @@ img.hand-img {
   z-index: -1;
 }
 
+/* slider banner testimonial css starts herre */
+/* button.slick-arrow.slick-prev {
+  left: 25px;
+}
 
+button.slick-arrow.slick-next {
+  right: 50px;
+}
+
+.slick-prev:before, .slick-next:before {
+  font-size: 50px !important;
+}
+.testi-Banner {
+  text-align: center;
+  width: 50%;
+}
+.slick-dots li.slick-active button:before {
+  font-size: 20px;
+  color: #fff !important;
+}
+
+.slick-dots li button:before {
+  font-size: 20px !important;
+  color: #D9D9D9 !important;
+}
+ul.slick-dots {
+  bottom: 20px;
+  z-index: 10;
+} */
 /* about us css here  */
 img.hand-img {
   height: 600px;

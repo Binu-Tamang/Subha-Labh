@@ -1,16 +1,25 @@
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css"; // Import styles
 import TestimonialCard from "../../components/testimonial/testimonial.jsx"; // Capitalize the component name
+import "./Testimonial.module.css";
+import {testimonialBgIcon} from "../../assets/index.js";
 
 const Testimonial = () => {
   return (
-    <div className="testimonialSection flex">
+    <div className="">
       <Carousel
         additionalTransfrom={0}
         arrows
         autoPlaySpeed={3000}
         centerMode={false}
-        className=""
+        className="w-full " 
+        style={{
+          backgroundImage: `url(${testimonialBgIcon})`,
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "center",
+        }}
+  
         containerClass="container-with-dots"
         dotListClass=""
         draggable

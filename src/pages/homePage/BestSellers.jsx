@@ -5,7 +5,7 @@ import Card from "../../components/CardCompo/Card";
 
 const Services = () => {
   return (
-    <div className="container">
+    <div className="container m-auto">
       <h1 className="text-5xl font-bold text-center mb-8">Best Sellers</h1>
       <div style={{ display: "flex", justifyContent: "space-around" }}>
         <Card

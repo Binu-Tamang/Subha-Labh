@@ -4,9 +4,8 @@ import Main from "./pages/main/index";
 import Login from "./pages/login/index";
 import Booknow from "./pages/booknow/index";
 import SignUp from "./pages/signup/index";
-import NoMatch from "./pages/NoMatchPage/nomatch";
+import NoMatch from "./components/NoMatchPage/nomatch";
 import EnquireNow from "./pages/enquirenow/index";
-
 
 const App = () => {
   return (

@@ -27,7 +27,7 @@ function HeroSection() {
           <h2 className="text-white text-2xl md:text-6xl mb-4 kanit-semibold">
             Prediction Accurately
           </h2>
-          <Link to="/enquire-now" className="bg-[#462670] text-white font-bold py-3 mt-4 px-6 rounded-full mx-auto hover:bg-[#5b3a8f]">
+          <Link to="/enquire-now" className="text-white font-bold py-2 px-6 rounded-full bg-gradient-to-r from-purpleCustom to-pinkCustom hover:opacity-90 transition duration-300">
           Enquire Now
           </Link>
         </div>

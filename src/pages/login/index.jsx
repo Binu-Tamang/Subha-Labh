@@ -58,7 +58,7 @@ function LoginForm() {
           </div>
 
           {/* Sign In Button */}
-          <button className="w-full bg-purple-600 text-white py-3 rounded-lg font-semibold hover:bg-purple-700 transition duration-300">
+          <button className="w-full text-white font-bold py-2 px-6 bg-gradient-to-r from-purpleCustom to-pinkCustom hover:opacity-90 transition duration-300">
             Sign In
           </button>
 

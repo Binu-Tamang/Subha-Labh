@@ -4,7 +4,7 @@ import { facebookIcon, linkedinIcon, instagramIcon, twitterIcon, mapIcon, emailI
 
 const Footer = () => {
   return (
-    <footer className="  w-full  bg-gradient-to-r from-black via-purple-600 to-pink-500 py-10">
+    <footer className="  w-full bg-gradient-to-r from-purple-400 via-purple-600 to-pink-500 py-10">
       <div className=" container mx-auto px-4">
         {/* Scroll up button - Uncomment if needed */}
         {/* <div id="errorContainer">

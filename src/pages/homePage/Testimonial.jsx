@@ -1,27 +1,28 @@
 import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css"; // Import styles
-import TestimonialCard from "../../components/testimonial/testimonial.jsx"; // Capitalize the component name
-import "./Testimonial.module.css";
-import {testimonialBgIcon} from "../../assets/index.js";
+import "react-multi-carousel/lib/styles.css";
+import TestimonialCard from "../../components/testimonial/testimonial.jsx";
+import "../../pages/homePage/Testimonial.module.css";
+import { testimonialBgIcon } from "../../assets/index.js";
 
 const Testimonial = () => {
   return (
-    <div className="">
+    <div
+      className="main-slider w-full bg-gradient-to-r from-purple-400 via-purple-600 to-pink-500 py-32 md:py-48 lg:py-60"
+      style={{
+        backgroundImage: `url(${testimonialBgIcon}), linear-gradient(to right, #9F7AEA, #D53F8C)`,
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "center",
+      }}
+    >
       <Carousel
         additionalTransfrom={0}
         arrows
         autoPlaySpeed={3000}
         centerMode={false}
-        className="w-full " 
-        style={{
-          backgroundImage: `url(${testimonialBgIcon})`,
-          backgroundSize: "cover",
-          backgroundRepeat: "no-repeat",
-          backgroundPosition: "center",
-        }}
-  
+        className="w-full"
         containerClass="container-with-dots"
-        dotListClass=""
+        dotListClass="custom-dots"
         draggable
         focusOnSelect={false}
         infinite
@@ -60,22 +61,39 @@ const Testimonial = () => {
         autoPlay
       >
         <TestimonialCard
-          description="Fixing CSS load order/style.chunk.css incorrect in Nextjs"
-          title="w3js.com - Web Front-End Studio"
+          description="I had an incredible experience with Subha Labh. The astrologer provided deep insights into my career and personal life, helping me make important decisions with confidence. Highly recommended!"
+          title="Testimonial"
           name={"John Doe"}
         />
         <TestimonialCard
-          description="Improving UI responsiveness for mobile devices."
-          title="React Developer Tips"
+          description="I had an incredible experience with Subha Labh. The astrologer provided deep insights into my career and personal life, helping me make important decisions with confidence. Highly recommended!"
+          title="Testimonial"
           name={"Jane Smith"}
         />
         <TestimonialCard
-          description="Improving UI responsiveness for mobile devices."
-          title="React Developer Tips"
+          description="I had an incredible experience with Subha Labh. The astrologer provided deep insights into my career and personal life, helping me make important decisions with confidence. Highly recommended!"
+          title="Testimonial"
           name={"Binu Tamang"}
         />
         {/* Add more TestimonialCard items here */}
       </Carousel>
+
+      <style>
+        {`
+        .react-multi-carousel-list {
+    margin: 20px 0 !important;
+    padding: 40px 0 !important;
+  }
+    .custom-dots .react-multi-carousel-dot button {
+      width: 20px !important;
+      height: 20px !important;
+      border: 1px solid #fff !important;
+    }
+      .react-multi-carousel-dot--active button {
+        background-color: transparent !important;
+      }
+  `}
+      </style>
     </div>
   );
 };

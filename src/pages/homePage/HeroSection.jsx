@@ -1,8 +1,15 @@
 // eslint-disable-next-line no-unused-vars
 import React from "react";
 import { mainBanner, bannerBg } from "../../assets/index.js";
+// import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function HeroSection() {
+  // const navigate = useNavigate();
+  // const handleEnquireNow = () => {
+    // navigate("/enquire-now", { replace: true });
+    // window.location.href("/enquire-now");
+  // }
   return (
     <>
       <div className="banner-slider">
@@ -20,9 +27,9 @@ function HeroSection() {
           <h2 className="text-white text-2xl md:text-6xl mb-4 kanit-semibold">
             Prediction Accurately
           </h2>
-          <button className="bg-[#462670] text-white font-bold py-3 mt-4 px-6 rounded-full mx-auto hover:bg-[#5b3a8f]">
+          <Link to="/enquire-now" className="bg-[#462670] text-white font-bold py-3 mt-4 px-6 rounded-full mx-auto hover:bg-[#5b3a8f]">
           Enquire Now
-        </button>
+          </Link>
         </div>
       </div>
     </>

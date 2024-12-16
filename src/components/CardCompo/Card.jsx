@@ -2,7 +2,16 @@ import { useNavigate } from "react-router-dom";
 const Card = ({ title, description, image, buttonText }) => {
   const navigate = useNavigate();
   const handleBookNow = () => {
-    navigate("/book-now", { replace: true });
+    // condition for enquire now
+    console.log("This is button text,", buttonText);
+    if (buttonText === "Enquire Now") {
+      navigate("/enquire-now", { replace: true });
+    }
+    else if (buttonText === "Order Now") {
+      navigate("/order-now", { replace: true });
+    }
+    else {
+      navigate("/book-now", { replace: true });}
   };
   return (
     <div className="card text-center mt-4 max-w-sm overflow-hidden text-gray-800 p-4">

@@ -7,6 +7,7 @@ import SignUp from "./pages/signup/index";
 import NoMatch from "./components/NoMatchPage/nomatch";
 import EnquireNow from "./pages/enquirenow/index";
 import Dashboard from "./pages/dashboard/index";
+import OrderNow from "./pages/ordernow/index";
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
       <Route path="/dashboard" element={<Dashboard />} />
       {/* this for another routes */}
       <Route path="/book-now" element={<Booknow />} />
+      <Route path="/order-now" element={<OrderNow />} />
       <Route path="/enquire-now" element={<EnquireNow />} />
       {/* <Route path="/order-now" element={<OrderNow />} /> */}
       {/* <Route path="*" element={<Navigate to="/" replace />} /> */}

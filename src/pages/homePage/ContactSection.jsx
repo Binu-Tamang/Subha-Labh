@@ -68,8 +68,9 @@ const ContactSection = () => {
           <img src={DiceImg} alt="Contact Us" className="w-full" />
         </div>
 
-        {/* Form Section */}
-        <form onSubmit={handleSubmit} className="space-y-6">
+        <div className="contactForm flex justify-center items-center">
+          {/* Form Section */}
+        <form onSubmit={handleSubmit} className="space-y-6 w-full px-1">
           <fieldset>
             <div className="space-y-4">
               {/* Full Name */}
@@ -148,6 +149,7 @@ const ContactSection = () => {
             </div>
           </fieldset>
         </form>
+        </div>
       </div>
     </div>
   );

@@ -5,10 +5,20 @@ import {
   GoogleColor,
   AppleColor,
 } from "../../assets";
+import { Link } from "react-router-dom";
 
 function LoginForm() {
   return (
     <div className="flex flex-col lg:flex-row h-screen">
+      {/* Back Icon */}
+      <Link
+        to="/"
+        className="absolute top-6 left-6 text-gray-600 hover:text-black transition"
+      >
+        {/* Left Arrow Icon */}
+        <span className="text-3xl bg-white px-[20px] py-[6px] rounded-3xl hover:shadow transition">&larr;</span>
+      </Link>
+      
       {/* Left Section */}
       <div className="flex-1 flex flex-col justify-center px-6 lg:px-20 bg-white">
         <div className="max-w-xl w-full mx-auto">
@@ -16,7 +26,7 @@ function LoginForm() {
             Start your Journey
           </h3>
           <h2 className="text-3xl text-gray-800 mb-6 kanit-semibold font-bold">
-          Sign up to Subha Labh
+            Sign up to Subha Labh
           </h2>
 
           <div className="mt-10">
@@ -31,8 +41,8 @@ function LoginForm() {
               <label
                 htmlFor="email"
                 className="absolute left-3 top-3 text-gray-500 bg-white font-normal 
-            peer-placeholder-shown:top-3 peer-placeholder-shown:text-gray-400 
-            peer-focus:-top-3 peer-focus:text-purple-500 transition-all duration-300 px-2"
+                  peer-placeholder-shown:top-3 peer-placeholder-shown:text-gray-400 
+                  peer-focus:-top-3 peer-focus:text-purple-500 transition-all duration-300 px-2"
               >
                 E-mail
               </label>
@@ -49,8 +59,8 @@ function LoginForm() {
               <label
                 htmlFor="password"
                 className="absolute left-3 top-3 text-gray-500 bg-white font-normal 
-            peer-placeholder-shown:top-3 peer-placeholder-shown:text-gray-400 
-            peer-focus:-top-3 peer-focus:text-purple-500 transition-all duration-300 px-2"
+                  peer-placeholder-shown:top-3 peer-placeholder-shown:text-gray-400 
+                  peer-focus:-top-3 peer-focus:text-purple-500 transition-all duration-300 px-2"
               >
                 Password
               </label>
@@ -87,10 +97,13 @@ function LoginForm() {
 
           {/* Sign Up Prompt */}
           <p className="mt-6 text-gray-600 text-center">
-          Have an account? {" "}
-            <a href="/" className="text-blue-600 font-medium hover:underline">
+            Don&apos;t have an account?{" "}
+            <Link
+              to="/login"
+              className="text-blue-600 font-medium hover:underline hover:text-black"
+            >
               Sign In
-            </a>
+            </Link>
           </p>
         </div>
       </div>

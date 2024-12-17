@@ -132,7 +132,7 @@ function Dashboard() {
       <div className="absolute top-5 right-5 flex items-center space-x-6">
         <div className="relative cursor-pointer">
           <BellIcon className="w-[30px] h-[30px] text-gray-600" />
-          <span className="absolute top-0 right-0 bg-red-500 text-xs text-white rounded-full px-2">
+          <span className="absolute -top-2 -right-1 px-[6px] py-[2px] bg-red-500 text-xs text-white rounded-full">
             5
           </span>
         </div>

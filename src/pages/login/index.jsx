@@ -5,10 +5,25 @@ import {
   GoogleColor,
   AppleColor,
 } from "../../assets";
+import { Link, useNavigate } from "react-router-dom";
 
 function LoginForm() {
+  const navigate = useNavigate();
+
+  const handleLogin = () => {
+    navigate("/dashboard");
+  };
   return (
     <div className="flex flex-col lg:flex-row h-screen">
+      {/* Back Icon */}
+      <Link
+        to="/"
+        className="absolute top-6 left-6 text-gray-600 hover:text-black transition"
+      >
+        {/* Left Arrow Icon */}
+        <span className="text-3xl bg-white px-[20px] py-[6px] rounded-3xl hover:shadow transition">&larr;</span>
+      </Link>
+      
       {/* Left Section */}
       <div className="flex-1 flex flex-col justify-center px-6 lg:px-20 bg-white">
         <div className="max-w-xl w-full mx-auto">
@@ -58,7 +73,10 @@ function LoginForm() {
           </div>
 
           {/* Sign In Button */}
-          <button className="w-full text-white font-bold py-2 px-6 bg-gradient-to-r from-purpleCustom to-pinkCustom hover:opacity-90 transition duration-300">
+          <button
+            onClick={handleLogin}
+            className="w-full text-white font-bold py-2 px-6 bg-gradient-to-r from-purpleCustom to-pinkCustom hover:opacity-90 transition duration-300"
+          >
             Sign In
           </button>
 
@@ -88,9 +106,12 @@ function LoginForm() {
           {/* Sign Up Prompt */}
           <p className="mt-6 text-gray-600 text-center">
             Don&apos;t have an account?{" "}
-            <a href="/" className="text-blue-600 font-medium hover:underline">
-              Sign up
-            </a>
+            <Link
+              to="/signup"
+              className="text-blue-600 font-medium hover:underline hover:text-black"
+            >
+              Sign Up
+            </Link>
           </p>
         </div>
       </div>

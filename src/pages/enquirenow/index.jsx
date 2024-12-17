@@ -18,7 +18,7 @@ const OrderNow = () => {
       </Link>
 
       <div className="bg-[#F2EBEB] rounded-lg shadow-lg p-8 w-96 border-2 border-white">
-        <h2 className="text-center text-2xl font-bold mb-2">Order now!</h2>
+        <h2 className="text-center text-2xl font-bold mb-2">Enquire Now!</h2>
         <p className="text-center text-gray-500 mb-6">
           What would you like to order?
         </p>
@@ -58,7 +58,7 @@ const OrderNow = () => {
             type="submit"
             className="w-full bg-blue-600 text-white rounded-lg py-2 hover:bg-blue-700 transition flex justify-center items-center"
           >
-            Order Now →
+            Enquire Now →
           </button>
         </form>
       </div>

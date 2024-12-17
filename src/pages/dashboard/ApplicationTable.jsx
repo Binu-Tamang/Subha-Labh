@@ -36,8 +36,8 @@ const bookings = [
 ];
 
 const BookingTable = () => {
-  const [bookingsList, setBookingsList] = useState(bookings); // Initial state
-  const [selectedRows, setSelectedRows] = useState([]); // To track selected rows
+  const [bookingsList, setBookingsList] = useState(bookings); 
+  const [selectedRows, setSelectedRows] = useState([]); 
 
   const handleCheckboxChange = (index) => {
     setSelectedRows((prev) =>

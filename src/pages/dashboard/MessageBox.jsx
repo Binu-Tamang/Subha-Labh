@@ -36,8 +36,8 @@ const messages = [
 ];
 
 const MessageBox = () => {
-  const [messagesList, setMessagesList] = useState(messages); // Initial state
-  const [selectedRows, setSelectedRows] = useState([]); // To track selected rows
+  const [messagesList, setMessagesList] = useState(messages); 
+  const [selectedRows, setSelectedRows] = useState([]); 
 
   const handleCheckboxChange = (index) => {
     setSelectedRows((prev) =>
@@ -91,7 +91,7 @@ const MessageBox = () => {
                 <td className="py-2 px-4 border-b border-gray-300">{message.createdAt}</td>
                 <td className="py-2 px-4 border-b border-gray-300">
                   <button
-                    onClick={() => handleDeleteRow(index)} // Delete button for each row
+                    onClick={() => handleDeleteRow(index)} 
                     className="bg-red-500 text-white py-1 px-3 rounded-md"
                   >
                     Delete

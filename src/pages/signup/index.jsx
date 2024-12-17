@@ -18,7 +18,7 @@ function LoginForm() {
         {/* Left Arrow Icon */}
         <span className="text-3xl bg-white px-[20px] py-[6px] rounded-3xl hover:shadow transition">&larr;</span>
       </Link>
-      
+
       {/* Left Section */}
       <div className="flex-1 flex flex-col justify-center px-6 lg:px-20 bg-white">
         <div className="max-w-xl w-full mx-auto">
@@ -111,12 +111,11 @@ function LoginForm() {
       {/* Right Section */}
       <div className="hidden lg:block flex-1 relative">
         <img
-          src={SignUpImg} /* Replace with the imported image path */
+          src={SignUpImg} 
           alt="Astronaut holding moon"
           className="h-full w-full object-cover"
         />
         <div className="absolute top-8 right-8">
-          {/* Replace with your custom logo/icon */}
           <span className="w-12 h-4 text-white rounded-full flex items-center justify-center">
             <Sparkle />
           </span>

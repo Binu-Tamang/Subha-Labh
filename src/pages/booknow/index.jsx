@@ -1,169 +1,141 @@
 import { useState } from "react";
 import {
-  facebookIcon,
-  linkedinIcon,
-  instagramIcon,
-  twitterIcon,
-  mapIcon,
-  emailIcon,
-  userIcon
-  // HomeIcon,
-  // HeartIcon,
-  // BookingSelected,
-  // PanditIcon,
-} from "../../assets/index.js";
-import { CalendarCheck, Heart, House, Menu, UserRoundCheck, X } from "lucide-react";
-import { Link } from "react-router-dom";
+  Bars3Icon,
+  UserIcon,
+  HomeIcon,
+  BookmarkIcon,
+  ChartBarIcon,
+  FolderIcon,
+  ChatBubbleBottomCenterTextIcon,
+  ArrowRightOnRectangleIcon,
+} from "@heroicons/react/24/outline";
 
-const Header = () => {
-  const [show, setShow] = useState(false);
+const Booknow = () => {
+  const [isSidebarOpen, setSidebarOpen] = useState(true); // Sidebar toggle state
+  const [activePage, setActivePage] = useState("Dashboard"); // Active sidebar item
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  const toggleSidebar = () => {
+    setSidebarOpen(!isSidebarOpen);
+  };
+
+  const renderContent = () => {
+    switch (activePage) {
+      case "Dashboard":
+        return <div className="p-4">Welcome to the Dashboard!</div>;
+      case "Users":
+        return <div className="p-4">Here you can manage your users.</div>;
+      case "Messages":
+        return <div className="p-4">View and send messages here.</div>;
+      case "Bookmarks":
+        return <div className="p-4">Your saved bookmarks appear here.</div>;
+      case "Files":
+        return <div className="p-4">Access and manage your files.</div>;
+      case "Stats":
+        return <div className="p-4">View your statistics and reports.</div>;
+      default:
+        return <div className="p-4">Select an option from the sidebar.</div>;
+    }
+  };
 
   return (
-    <header className="text-white bg-black">
-      {/* Main Header */}
-      <div className="container-fluid mx-auto">
-        <div className="flex flex-wrap justify-between items-center p-4">
-          {/* Left Section */}
-          <div className="flex items-center gap-4">
-            <ul className="flex gap-2 list-unstyled socialIcons">
-              <li>
-                <img src={facebookIcon} alt="Facebook" className="w-6 h-6" />
-              </li>
-              <li>
-                <img src={linkedinIcon} alt="LinkedIn" className="w-6 h-6" />
-              </li>
-              <li>
-                <img src={instagramIcon} alt="Instagram" className="w-6 h-6" />
-              </li>
-              <li>
-                <img src={twitterIcon} alt="Twitter" className="w-6 h-6" />
-              </li>
-              <li>
-                <img src={mapIcon} alt="Google Maps" className="w-6 h-6" />
-              </li>
-              <li className="flex items-center">
-                <img src={emailIcon} alt="Email" className="w-6 h-6" />
-                <a
-                  href="mailto:ouremail@emailus.com"
-                  className="ml-2 text-white hover:underline"
-                >
-                  ouremail@emailus.com
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Right Section */}
-          <div className="loginBox">
-            <ul className="flex gap-4 items-center">
-              <li className="flex items-center">
-                <img src={userIcon} alt="User Icon" className="w-6 h-6" />
-                {/* <a href="/LoginForm" className="ml-2 hover:underline">
-                  Log In
-                </a> */}
-                <Link to="/login">Log In</Link>
-              </li>
-              <li>
-                {/* <a href="/register" className="hover:underline">
-                  Sign In
-                </a> */}
-                <Link to="/signup">Sign Up</Link>
-              </li>
-            </ul>
-          </div>
+    <div className="relative transition-all duration-300">
+      {/* Header */}
+      <header className="fixed top-0 left-0 w-full bg-white shadow-md h-16 flex items-center px-4 z-10">
+        <div
+          onClick={toggleSidebar}
+          className="cursor-pointer text-2xl text-gray-600"
+        >
+          <Bars3Icon className="h-8 w-8" />
         </div>
+      </header>
 
-        {/* Navbar */}
-        <nav className="navbar navbar-dark flex items-center justify-start p-4">
-          <button
-            onClick={handleShow}
-            className="text-white hover:text-gray-300 focus:outline-none mr-4 bg-transparent"
-            aria-controls="offcanvasMenu"
-            aria-expanded={show}
+      {/* Sidebar */}
+      <div
+        className={`fixed top-0 left-0 h-screen bg-gray-800 text-white transition-all duration-300 ${
+          isSidebarOpen ? "w-60" : "w-20"
+        }`}
+      >
+        <nav className="flex flex-col h-full">
+          <a
+            href="#"
+            onClick={() => setActivePage("Dashboard")}
+            className={`flex items-center px-4 py-4 hover:bg-gray-700 transition-all ${
+              activePage === "Dashboard" ? "bg-gray-700" : ""
+            }`}
           >
-            <span className="block w-6 h-6 text-white">
-              <Menu />
-            </span>
-          </button>
-          <ul className="flex gap-6 navbar-brand">
-            <li>
-              <a href="/" className="hover:text-gray-300">
-                Home
-              </a>
-            </li>
-            <li>
-              <a href="/services" className="hover:text-gray-300">
-                Services
-              </a>
-            </li>
-            <li>
-              <a href="/best-seller" className="hover:text-gray-300">
-                Best Seller
-              </a>
-            </li>
-            <li>
-              <a href="/about-us" className="hover:text-gray-300">
-                About Us
-              </a>
-            </li>
-          </ul>
+            <HomeIcon className="h-6 w-6" />
+            {isSidebarOpen && <span className="ml-2">Dashboard</span>}
+          </a>
+          <a
+            href="#"
+            onClick={() => setActivePage("Users")}
+            className={`flex items-center px-4 py-2 hover:bg-gray-700 transition-all ${
+              activePage === "Users" ? "bg-gray-700" : ""
+            }`}
+          >
+            <UserIcon className="h-6 w-6" />
+            {isSidebarOpen && <span className="ml-2">Users</span>}
+          </a>
+          <a
+            href="#"
+            onClick={() => setActivePage("Messages")}
+            className={`flex items-center px-4 py-2 hover:bg-gray-700 transition-all ${
+              activePage === "Messages" ? "bg-gray-700" : ""
+            }`}
+          >
+            <ChatBubbleBottomCenterTextIcon className="h-6 w-6" />
+            {isSidebarOpen && <span className="ml-2">Messages</span>}
+          </a>
+          <a
+            href="#"
+            onClick={() => setActivePage("Bookmarks")}
+            className={`flex items-center px-4 py-2 hover:bg-gray-700 transition-all ${
+              activePage === "Bookmarks" ? "bg-gray-700" : ""
+            }`}
+          >
+            <BookmarkIcon className="h-6 w-6" />
+            {isSidebarOpen && <span className="ml-2">Bookmarks</span>}
+          </a>
+          <a
+            href="#"
+            onClick={() => setActivePage("Files")}
+            className={`flex items-center px-4 py-2 hover:bg-gray-700 transition-all ${
+              activePage === "Files" ? "bg-gray-700" : ""
+            }`}
+          >
+            <FolderIcon className="h-6 w-6" />
+            {isSidebarOpen && <span className="ml-2">Files</span>}
+          </a>
+          <a
+            href="#"
+            onClick={() => setActivePage("Stats")}
+            className={`flex items-center px-4 py-2 hover:bg-gray-700 transition-all ${
+              activePage === "Stats" ? "bg-gray-700" : ""
+            }`}
+          >
+            <ChartBarIcon className="h-6 w-6" />
+            {isSidebarOpen && <span className="ml-2">Stats</span>}
+          </a>
+          <a
+            href="#"
+            className="mt-auto flex items-center px-4 py-2 hover:bg-gray-700 transition-all"
+          >
+            <ArrowRightOnRectangleIcon className="h-6 w-6" />
+            {isSidebarOpen && <span className="ml-2">Sign Out</span>}
+          </a>
         </nav>
       </div>
 
-      {/* Offcanvas Menu */}
+      {/* Main Content */}
       <div
-        className={`fixed inset-y-0 left-0 w-72 bg-white color shadow-lg transform ${
-          show ? "translate-x-0" : "-translate-x-full"
-        } transition-transform duration-300`}
+        className={`transition-all duration-300 ${
+          isSidebarOpen ? "ml-64" : "ml-20"
+        } p-4 pt-20`}
       >
-        <div className="flex justify-end p-3">
-          <button onClick={handleClose} className="text-gray-500 offcanvas">
-          <X />
-          </button>
-        </div>
-        <ul className="p-4 space-y-4 offcanvas-List">
-          <li>
-            <a
-              href="/"
-              className="flex items-center text-gray-700 hover:text-blue-600"
-            >
-              <House /> Home
-            </a>
-          </li>
-          <li>
-            <a
-              href="/recommendation"
-              className="flex items-center text-gray-700 hover:text-blue-600"
-            >
-              <Heart className="!w-[52px]" /> Personalized Recommendation
-            </a>
-          </li>
-          <li>
-            <a
-              href="/venue-booking"
-              className="flex items-center text-gray-700 hover:text-blue-600"
-            >
-              <CalendarCheck />
-              Venue Booking
-            </a>
-          </li>
-          <li>
-            <a
-              href="/pandit-booking"
-              className="flex items-center text-gray-700 hover:text-blue-600"
-            >
-              <UserRoundCheck /> Pandit Booking
-            </a>
-          </li>
-        </ul>
+        {renderContent()}
       </div>
-
-      <h1>Book Now</h1>
-    </header>
+    </div>
   );
 };
 
-export default Header;
+export default Booknow;

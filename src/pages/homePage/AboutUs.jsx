@@ -7,7 +7,7 @@ const AboutUs = () => {
     <div className="container mx-auto px-4">
       {/* Title Section */}
       <div className="text-center mb-4">
-        <h1 className="fw-bold">About Us</h1>
+        <h1 className="text-5xl font-bold text-center mb-8">About Us</h1>
       </div>
 
       <img src={HandImg} alt="Hand" className="hand-img" />
@@ -16,11 +16,11 @@ const AboutUs = () => {
       <div className="block">
         {/* Image Section */}
         <div className="text-center w-full flex justify-center h-[350px]">
-          <div className="img-wrp rounded-l-3xl rounded-r-3xl">
+          <div className="img-wrp">
             <img
               src={AboutImg}
               alt="Astrology Chart and Tools"
-              className="h-full object-cover  w-[500px]"
+              className="h-full object-cover  w-[500px] rounded-l-3xl rounded-r-3xl"
             />
           </div>
         </div>

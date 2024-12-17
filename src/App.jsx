@@ -6,6 +6,7 @@ import Booknow from "./pages/booknow/index";
 import SignUp from "./pages/signup/index";
 import NoMatch from "./components/NoMatchPage/nomatch";
 import EnquireNow from "./pages/enquirenow/index";
+import Dashboard from "./pages/dashboard/index";
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<SignUp />} />
       <Route path="*" element={<NoMatch />} />
+      <Route path="/dashboard" element={<Dashboard />} />
       {/* this for another routes */}
       <Route path="/book-now" element={<Booknow />} />
       <Route path="/enquire-now" element={<EnquireNow />} />

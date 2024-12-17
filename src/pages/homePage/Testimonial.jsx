@@ -7,7 +7,7 @@ import { testimonialBgIcon } from "../../assets/index.js";
 const Testimonial = () => {
   return (
     <div
-      className="main-slider w-full bg-gradient-to-r from-purple-400 via-purple-600 to-pink-500 py-32 md:py-48 lg:py-60"
+      className="main-slider w-full bg-gradient-to-r from-purple-400 via-purple-600 to-pink-500 py-32 md:py-40 lg:py-44"
       style={{
         backgroundImage: `url(${testimonialBgIcon}), linear-gradient(to right, #9F7AEA, #D53F8C)`,
         backgroundSize: "cover",
@@ -92,6 +92,7 @@ const Testimonial = () => {
       .react-multi-carousel-dot--active button {
         background-color: transparent !important;
       }
+        
   `}
       </style>
     </div>

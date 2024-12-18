@@ -32,6 +32,9 @@ import FacebookColor from "./icons/Facebook1.png"
 import GoogleColor from "./icons/Google.png"
 import AppleColor from "./icons/Apple.png"
 
+// profile account icons
+import ProfileImg from "./icons/profile.png"
+
 export {
     mainBanner,
     bannerBg,
@@ -61,5 +64,6 @@ export {
     SignUpImg,
     FacebookColor,
     GoogleColor,
-    AppleColor
+    AppleColor,
+    ProfileImg
 };

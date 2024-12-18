@@ -11,6 +11,7 @@ import {
   BellIcon,
 } from "@heroicons/react/24/outline";
 import MessageBox from "./MessageBox";
+import { Link } from "react-router-dom";
 
 function Dashboard() {
   const [activeItem, setActiveItem] = useState("Dashboard");
@@ -62,13 +63,17 @@ function Dashboard() {
           </div>
         );
       case "Application":
-        return <div className="w-full">
-          <ApplicationTable />
-        </div>;
+        return (
+          <div className="w-full">
+            <ApplicationTable />
+          </div>
+        );
       case "Message":
-        return <div className="w-full">
-        <MessageBox />
-      </div>;
+        return (
+          <div className="w-full">
+            <MessageBox />
+          </div>
+        );
       case "Statics":
         return <p className="text-2xl">Here are your statistics.</p>;
       default:
@@ -137,7 +142,9 @@ function Dashboard() {
           </span>
         </div>
         <div className="bg-black text-white rounded-full w-8 h-8 p-1 flex items-center justify-center cursor-pointer">
-          <UserIcon className="w-[45px] h-[45px]" />
+          <Link to="/profile">
+            <UserIcon className="w-[45px] h-[45px] bg-black text-white rounded-full p-2" />
+          </Link>
         </div>
       </div>
     </div>

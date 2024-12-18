@@ -23,8 +23,7 @@ const Footer = () => {
             <div>
               <h5 className="text-white text-lg font-semibold pb-3">About Us</h5>
               <p className="text-white">
-                [Demo Company] is a trusted organization providing expert
-                services for various professional needs.
+              At Subha Labh, our senior pandits are here to provide personalized horoscope readings, offering expert guidance for all aspects of your life.
               </p>
               <div className="flex gap-3 mt-3">
                 <a href="#">

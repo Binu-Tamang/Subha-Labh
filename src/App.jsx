@@ -9,6 +9,10 @@ import EnquireNow from "./pages/enquirenow/index";
 import Dashboard from "./pages/dashboard/index";
 import OrderNow from "./pages/ordernow/index";
 import ProfileBox from "./pages/profile/index";
+import PresoanlRecommendation from "./pages/booknow/PersonalReco";
+import VenueBooking from "./pages/booknow/VenueBooking";
+import BookPaditBookingCard from "./pages/booknow/PanditBookingPage";
+import BookaPandit from "./pages/forms/bookapandit";
 
 const App = () => {
   return (
@@ -23,6 +27,10 @@ const App = () => {
       <Route path="/order-now" element={<OrderNow />} />
       <Route path="/enquire-now" element={<EnquireNow />} />
       <Route path="/profile" element={<ProfileBox />} />
+      <Route path="/personal-recommendation" element={<PresoanlRecommendation />} />
+      <Route path="/venue-booking" element={<VenueBooking />} />
+      <Route path="/book-pandit-page" element={<BookPaditBookingCard />} />
+      <Route path="/book-a-pandit" element={<BookaPandit />} />
       {/* <Route path="/order-now" element={<OrderNow />} /> */}
       {/* <Route path="*" element={<Navigate to="/" replace />} /> */}
     </Routes>

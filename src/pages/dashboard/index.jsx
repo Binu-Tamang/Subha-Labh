@@ -20,7 +20,7 @@ function Dashboard() {
     switch (activeItem) {
       case "Dashboard":
         return (
-          <div className="grid grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {/* Profile Viewed */}
             <div className="bg-purple-100 p-6 rounded-3xl shadow-md hover:shadow-lg transition duration-300">
               <p className="text-black text-2xl">Profile Viewed</p>
@@ -99,9 +99,7 @@ function Dashboard() {
             },
             {
               name: "Message",
-              icon: (
-                <ChatBubbleLeftEllipsisIcon className="w-[30px] h-[30px]" />
-              ),
+              icon: <ChatBubbleLeftEllipsisIcon className="w-[30px] h-[30px]" />,
               badge: "1",
             },
             {

@@ -1,10 +1,10 @@
 import mainBanner from "./images/Backgroung-Image.png";
 import bannerBg from "./images/Background-Gradient.png";
 import PanditImg from "./images/panditji.jpg";
-import VastuDetectionImg from "./images/VastuDetection.jpg";
+import VastuDetectionImg from "./images/VastuDetection.png";
 import VenueBookingImg from "./images/VenueBooking.png";
-import PannaImg from "./images/Panna.jpg";
-import PushparajImg from "./images/Pushparaj.jpg";
+import PannaImg from "./images/Panna.png";
+import PushparajImg from "./images/Pushparaj.png";
 import RudrakshImg from "./images/Rudraksh.jpg";
 import HandImg from "./images/hand.png";
 import AboutImg from "./images/about.png";
@@ -34,6 +34,22 @@ import AppleColor from "./icons/Apple.png"
 
 // profile account icons
 import ProfileImg from "./icons/profile.png"
+
+// svg icons images
+import HomeSvg from "./svgIcon/home.png"
+import HeartSvg from "./svgIcon/heart.png"
+import BookingSvg from "./svgIcon/booking.png"
+import PanditSvg from "./svgIcon/pandit.png"
+import VastuSvg from "./svgIcon/vastu.png"
+
+// venue booking images here
+import HospitalityImg from "./images/hospitality.jpg"
+
+// baba ji images here 
+import BabaJi from "./images/babaJi.jpg"
+
+// book a pandit images here
+import BellBg from "./images/bell.png"
 
 export {
     mainBanner,
@@ -65,5 +81,13 @@ export {
     FacebookColor,
     GoogleColor,
     AppleColor,
-    ProfileImg
+    ProfileImg,
+    HomeSvg,
+    HeartSvg,
+    BookingSvg,
+    PanditSvg,
+    VastuSvg,
+    BabaJi,
+    HospitalityImg,
+    BellBg
 };

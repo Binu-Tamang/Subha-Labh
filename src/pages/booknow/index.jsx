@@ -1,37 +1,56 @@
 import { useState } from "react";
+import { Bars3Icon } from "@heroicons/react/24/outline";
 import {
-  Bars3Icon,
-  UserIcon,
-  HomeIcon,
-  BookmarkIcon,
-  ChartBarIcon,
-  FolderIcon,
-  ChatBubbleBottomCenterTextIcon,
-  ArrowRightOnRectangleIcon,
-} from "@heroicons/react/24/outline";
+  HomeSvg,
+  HeartSvg,
+  BookingSvg,
+  PanditSvg,
+  VastuSvg,
+} from "../../assets/index.js";
+import { Search, UserIcon } from "lucide-react";
+import PresonalRecommendation from "./PersonalReco.jsx";
+import { Link } from "react-router-dom";
+import VenueBooking from "./VenueBooking.jsx";
+import PaditBookingPage from "./PanditBookingPage.jsx";
 
 const Booknow = () => {
-  const [isSidebarOpen, setSidebarOpen] = useState(true); // Sidebar toggle state
-  const [activePage, setActivePage] = useState("Dashboard"); // Active sidebar item
+  const [isSidebarOpen, setSidebarOpen] = useState(true);
+  const [activePage, setActivePage] = useState("Home");
+  const [location, setLocation] = useState("");
+  const [name, setName] = useState("");
 
   const toggleSidebar = () => {
     setSidebarOpen(!isSidebarOpen);
   };
 
+  const handleSearch = () => {
+    console.log("Searching for:");
+    console.log("Location:", location);
+    console.log("Name:", name);
+  };
+
   const renderContent = () => {
     switch (activePage) {
-      case "Dashboard":
-        return <div className="p-4">Welcome to the Dashboard!</div>;
-      case "Users":
-        return <div className="p-4">Here you can manage your users.</div>;
-      case "Messages":
-        return <div className="p-4">View and send messages here.</div>;
-      case "Bookmarks":
-        return <div className="p-4">Your saved bookmarks appear here.</div>;
-      case "Files":
-        return <div className="p-4">Access and manage your files.</div>;
-      case "Stats":
-        return <div className="p-4">View your statistics and reports.</div>;
+      case "Home":
+        return <div className="p-4">Welcome to the Home!</div>;
+      case "Personalized Recommendation":
+        return (
+          <div className="p-4 h-[100vh] flex items-center justify-center">
+            <PresonalRecommendation />
+          </div>
+        );
+      case "Venue Booking":
+        return <div className="p-4 flex items-center justify-center absolute top-32">
+          <VenueBooking />  
+        </div>;
+      case "Pandit Booking":
+        return (
+          <div className="p-4 flex items-center justify-center absolute top-32">
+            <PaditBookingPage />
+          </div>
+        );
+      case "Vastu":
+        return <div className="p-4">Access and manage your Vastu.</div>;
       default:
         return <div className="p-4">Select an option from the sidebar.</div>;
     }
@@ -40,98 +59,135 @@ const Booknow = () => {
   return (
     <div className="relative transition-all duration-300">
       {/* Header */}
-      <header className="fixed top-0 left-0 w-full bg-white shadow-md h-16 flex items-center px-4 z-10">
-        <div
-          onClick={toggleSidebar}
-          className="cursor-pointer text-2xl text-gray-600"
-        >
-          <Bars3Icon className="h-8 w-8" />
+      <header className="bg-white shadow-md fixed">
+        <div className="logoHead w-full h-16 flex items-center justify-between px-4 py-2 z-10 border-b-2">
+          {/* Back Icon */}
+          <Link
+            to="/dashboard"
+            aria-label="Go back to home"
+            className="text-gray-600 hover:text-black transition"
+          >
+            <span className="text-3xl bg-white px-5 py-2 rounded-3xl hover:shadow transition">
+              &larr; <strong className="text-xl">Back</strong>
+            </span>
+          </Link>
+
+          <div className="headingName">
+            <h1 className="text-4xl font-bold">Subha Labh</h1>
+          </div>
+
+          <div className="userProfileWrap flex">
+            <button className="border-2 border-black rounded-full px-3 py-1 mx-2">
+              Book a Pandit
+            </button>
+            <UserIcon className="h-8 w-8 bg-black text-white p-1 rounded-full" />
+          </div>
+        </div>
+        <div className="searchBar w-full h-16 flex items-center justify-between px-4 py-2 z-10">
+          <div
+            onClick={toggleSidebar}
+            className="cursor-pointer text-2xl text-gray-600"
+          >
+            <Bars3Icon className="h-8 w-8" />
+          </div>
+
+          {/* Search Section */}
+          <div className="flex items-center justify-between bg-gray-300 my-2 rounded-full px-4 py-1 mx-auto">
+            {/* Search by Location */}
+            <input
+              type="text"
+              placeholder="Search by Location"
+              value={location}
+              onChange={(e) => setLocation(e.target.value)}
+              className="w-full bg-transparent placeholder-gray-500 outline-none border-none"
+            />
+
+            {/* Divider */}
+            <div className="border-l border-gray-400 h-6 mx-4"></div>
+
+            {/* Search by Name */}
+            <input
+              type="text"
+              placeholder="Search by Name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              className="w-full bg-transparent placeholder-gray-500 outline-none border-none"
+            />
+
+            {/* Search Button */}
+            <button
+              onClick={handleSearch}
+              className="flex items-center gap-2 bg-[#462670] text-white px-4 py-1 rounded-full hover:bg-[#3b1f5d] transition duration-300"
+            >
+              <Search size={18} /> SEARCH
+            </button>
+          </div>
         </div>
       </header>
 
       {/* Sidebar */}
       <div
-        className={`fixed top-0 left-0 h-screen bg-gray-800 text-white transition-all duration-300 ${
-          isSidebarOpen ? "w-60" : "w-20"
-        }`}
+        className={`fixed top-32 left-0 h-screen bg-gray-800 text-white transition-all duration-300 ${isSidebarOpen ? "w-60" : "w-20"}`}
       >
         <nav className="flex flex-col h-full">
           <a
             href="#"
-            onClick={() => setActivePage("Dashboard")}
-            className={`flex items-center px-4 py-4 hover:bg-gray-700 transition-all ${
-              activePage === "Dashboard" ? "bg-gray-700" : ""
-            }`}
+            onClick={() => setActivePage("Home")}
+            className={`flex items-center px-4 py-2 hover:bg-gray-700 transition-all gap-6 text-white hover:text-blue-500 ${activePage === "Home" ? "bg-gray-700" : ""}`}
           >
-            <HomeIcon className="h-6 w-6" />
-            {isSidebarOpen && <span className="ml-2">Dashboard</span>}
+            <img className="w-[40px] h-[40px]" src={HomeSvg} alt="Home" />
+            {isSidebarOpen && <span className="ml-2">Home</span>}
           </a>
           <a
             href="#"
-            onClick={() => setActivePage("Users")}
-            className={`flex items-center px-4 py-2 hover:bg-gray-700 transition-all ${
-              activePage === "Users" ? "bg-gray-700" : ""
-            }`}
+            onClick={() => setActivePage("Personalized Recommendation")}
+            className={`flex items-center px-4 py-2 hover:bg-gray-700 transition-all gap-6 text-white hover:text-blue-500 ${activePage === "Personalized Recommendation" ? "bg-gray-700" : ""}`}
           >
-            <UserIcon className="h-6 w-6" />
-            {isSidebarOpen && <span className="ml-2">Users</span>}
+            <img
+              className="w-[40px] h-[40px]"
+              src={HeartSvg}
+              alt="Personalized Recommendation"
+            />
+            {isSidebarOpen && (
+              <span className="ml-2">Personalized Recommendation</span>
+            )}
           </a>
           <a
             href="#"
-            onClick={() => setActivePage("Messages")}
-            className={`flex items-center px-4 py-2 hover:bg-gray-700 transition-all ${
-              activePage === "Messages" ? "bg-gray-700" : ""
-            }`}
+            onClick={() => setActivePage("Venue Booking")}
+            className={`flex items-center px-4 py-2 hover:bg-gray-700 transition-all gap-6 text-white hover:text-blue-500 ${activePage === "Venue Booking" ? "bg-gray-700" : ""}`}
           >
-            <ChatBubbleBottomCenterTextIcon className="h-6 w-6" />
-            {isSidebarOpen && <span className="ml-2">Messages</span>}
+            <img
+              className="w-[40px] h-[40px]"
+              src={BookingSvg}
+              alt="Venue Booking"
+            />
+            {isSidebarOpen && <span className="ml-2">Venue Booking</span>}
           </a>
           <a
             href="#"
-            onClick={() => setActivePage("Bookmarks")}
-            className={`flex items-center px-4 py-2 hover:bg-gray-700 transition-all ${
-              activePage === "Bookmarks" ? "bg-gray-700" : ""
-            }`}
+            onClick={() => setActivePage("Pandit Booking")}
+            className={`flex items-center px-4 py-2 hover:bg-gray-700 transition-all gap-6 text-white hover:text-blue-500 ${activePage === "Pandit Booking" ? "bg-gray-700" : ""}`}
           >
-            <BookmarkIcon className="h-6 w-6" />
-            {isSidebarOpen && <span className="ml-2">Bookmarks</span>}
+            <img
+              className="w-[40px] h-[40px]"
+              src={PanditSvg}
+              alt="Pandit Booking"
+            />
+            {isSidebarOpen && <span className="ml-2">Pandit Booking</span>}
           </a>
           <a
             href="#"
-            onClick={() => setActivePage("Files")}
-            className={`flex items-center px-4 py-2 hover:bg-gray-700 transition-all ${
-              activePage === "Files" ? "bg-gray-700" : ""
-            }`}
+            onClick={() => setActivePage("Vastu")}
+            className={`flex items-center px-4 py-2 hover:bg-gray-700 transition-all gap-6 text-white hover:text-blue-500 ${activePage === "Vastu" ? "bg-gray-700" : ""}`}
           >
-            <FolderIcon className="h-6 w-6" />
-            {isSidebarOpen && <span className="ml-2">Files</span>}
-          </a>
-          <a
-            href="#"
-            onClick={() => setActivePage("Stats")}
-            className={`flex items-center px-4 py-2 hover:bg-gray-700 transition-all ${
-              activePage === "Stats" ? "bg-gray-700" : ""
-            }`}
-          >
-            <ChartBarIcon className="h-6 w-6" />
-            {isSidebarOpen && <span className="ml-2">Stats</span>}
-          </a>
-          <a
-            href="#"
-            className="mt-auto flex items-center px-4 py-2 hover:bg-gray-700 transition-all"
-          >
-            <ArrowRightOnRectangleIcon className="h-6 w-6" />
-            {isSidebarOpen && <span className="ml-2">Sign Out</span>}
+            <img className="w-[40px] h-[40px]" src={VastuSvg} alt="Vastu" />
+            {isSidebarOpen && <span className="ml-2">Vastu</span>}
           </a>
         </nav>
       </div>
 
-      {/* Main Content */}
-      <div
-        className={`transition-all duration-300 ${
-          isSidebarOpen ? "ml-64" : "ml-20"
-        } p-4 pt-20`}
-      >
+      <div className={`transition-all duration-300 ${isSidebarOpen ? "ml-64" : "ml-20"} p-4 pt-20`}>
         {renderContent()}
       </div>
     </div>

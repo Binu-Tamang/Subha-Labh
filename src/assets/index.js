@@ -48,8 +48,11 @@ import HospitalityImg from "./images/hospitality.jpg"
 // baba ji images here 
 import BabaJi from "./images/babaJi.jpg"
 
-// book a pandit images here
+// book a pandit background images here
 import BellBg from "./images/bell.png"
+
+// personal recommendation form background images here
+import Spacebg from "./images/space.jpg"
 
 export {
     mainBanner,
@@ -89,5 +92,6 @@ export {
     VastuSvg,
     BabaJi,
     HospitalityImg,
-    BellBg
+    BellBg,
+    Spacebg
 };

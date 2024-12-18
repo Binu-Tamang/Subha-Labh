@@ -1,5 +1,8 @@
 import { useState } from "react";
-import { BellBg } from "../../assets/index.js";
+import { BellBg } from "../../assets";
+import Footer from "../homePage/Footer";
+import { UserIcon } from "lucide-react";
+import { Link } from "react-router-dom";
 
 function BookaPandit() {
   const [formData, setFormData] = useState({
@@ -28,12 +31,42 @@ function BookaPandit() {
       className="relative min-h-screen bg-cover bg-center"
       style={{ backgroundImage: `url(${BellBg})` }}
     >
-      <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+      {/* Header */}
+      <header className="bg-white shadow-md fixed top-0">
+        <div className="logoHead w-full h-16 flex items-center justify-between px-4 py-2 z-10 border-b-2">
+          {/* Back Icon */}
+          <Link
+            to="/dashboard"
+            aria-label="Go back to home"
+            className="text-gray-600 hover:text-black transition"
+          >
+            <span className="text-3xl bg-white px-5 py-2 rounded-3xl hover:shadow transition">
+              &larr; <strong className="text-xl">Back</strong>
+            </span>
+          </Link>
+
+          {/* Heading */}
+          <h1 className="text-4xl font-bold">Subha Labh</h1>
+
+          {/* User Profile */}
+          <div className="userProfileWrap">
+            <Link to="/profile" aria-label="Go to user profile">
+              <UserIcon className="w-[45px] h-[45px] bg-black text-white rounded-full p-2" />
+            </Link>
+          </div>
+        </div>
+      </header>
+
       {/* Content */}
       <div className="container mx-auto">
-        <div className="relative z-10 flex flex-col sm:flex-row items-center justify-start min-h-screen px-4 sm:pl-10">
+        <div className="relative flex flex-col sm:flex-row items-center justify-start min-h-screen px-4 sm:pl-10 py-16 mt-8">
           <div className="textWrapper">
-            <h1 className="text-6xl font-bold text-center text-white mb-6">
+            <h1
+              className="text-6xl font-bold text-center text-white mb-6"
+              style={{
+                textShadow: "2px 2px 6px rgba(0, 0, 0, 0.7)",
+              }}
+            >
               Book a Pandit
             </h1>
 
@@ -48,6 +81,7 @@ function BookaPandit() {
                     onChange={handleChange}
                     className="w-1/2 border border-gray-300 p-2 rounded focus:outline-none focus:ring-2 focus:ring-yellow-400"
                     required
+                    aria-label="Enter your name"
                   />
                   <input
                     type="text"
@@ -57,6 +91,7 @@ function BookaPandit() {
                     onChange={handleChange}
                     className="w-1/2 border border-gray-300 p-2 rounded focus:outline-none focus:ring-2 focus:ring-yellow-400"
                     required
+                    aria-label="Enter your phone number"
                   />
                 </div>
 
@@ -68,6 +103,7 @@ function BookaPandit() {
                   onChange={handleChange}
                   className="w-full border border-gray-300 p-2 rounded focus:outline-none focus:ring-2 focus:ring-yellow-400"
                   required
+                  aria-label="Enter your email address"
                 />
 
                 <select
@@ -76,11 +112,14 @@ function BookaPandit() {
                   onChange={handleChange}
                   className="w-full border border-gray-300 p-2 rounded focus:outline-none focus:ring-2 focus:ring-yellow-400"
                   required
+                  aria-label="Select event type"
                 >
                   <option value="">Select Event Type</option>
                   <option value="Housewarming">Housewarming</option>
                   <option value="Wedding">Wedding</option>
-                  <option value="Satyanarayan Pooja">Satyanarayan Pooja</option>
+                  <option value="Satyanarayan Pooja">
+                    Satyanarayan Pooja
+                  </option>
                 </select>
 
                 <div className="flex items-center space-x-4 justify-between">
@@ -116,6 +155,7 @@ function BookaPandit() {
                   onChange={handleChange}
                   className="w-full border border-gray-300 p-2 rounded focus:outline-none focus:ring-2 focus:ring-yellow-400"
                   required
+                  aria-label="Select a date"
                 />
 
                 <textarea
@@ -125,6 +165,7 @@ function BookaPandit() {
                   onChange={handleChange}
                   rows="2"
                   className="w-full border border-gray-300 p-2 rounded focus:outline-none focus:ring-2 focus:ring-yellow-400"
+                  aria-label="Enter address"
                 ></textarea>
 
                 <textarea
@@ -134,11 +175,12 @@ function BookaPandit() {
                   onChange={handleChange}
                   rows="2"
                   className="w-full border border-gray-300 p-2 rounded focus:outline-none focus:ring-2 focus:ring-yellow-400"
+                  aria-label="Enter additional details"
                 ></textarea>
 
                 <button
                   type="submit"
-                  className="w-full bg-yellow-600 text-white py-2 px-4 rounded hover:bg-yellow-700 transition duration-300"
+                  className="w-full text-white py-2 px-4 rounded bg-gradient-to-r from-purpleCustom to-pinkCustom hover:opacity-90 transition duration-300"
                 >
                   Send Message
                 </button>
@@ -147,6 +189,9 @@ function BookaPandit() {
           </div>
         </div>
       </div>
+
+      {/* Footer */}
+      <Footer />
     </div>
   );
 }

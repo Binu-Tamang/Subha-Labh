@@ -21,6 +21,10 @@ function PersonalRecommendationForm() {
     console.log("Form Data Submitted:", formData);
   };
 
+const handleBackClick = () => {
+  window.history.back();
+}
+
   return (
     <div
       className="relative min-h-screen bg-cover bg-center"
@@ -30,15 +34,16 @@ function PersonalRecommendationForm() {
       <header className="bg-white shadow-md fixed top-0">
         <div className="logoHead w-full h-16 flex items-center justify-between px-4 py-2 z-10 border-b-2">
           {/* Back Icon */}
-          <Link
-            to="/dashboard"
+          <button
+            // to="/dashboard"
+            onClick={handleBackClick}
             aria-label="Go back to home"
-            className="text-gray-600 hover:text-black transition"
+            className="text-gray-600 hover:text-black transition border-0 focus:outline-none"
           >
             <span className="text-3xl bg-white px-5 py-2 rounded-3xl hover:shadow transition">
               &larr; <strong className="text-xl">Back</strong>
             </span>
-          </Link>
+          </button>
 
           {/* Heading */}
           <h1 className="text-4xl font-bold">Subha Labh</h1>

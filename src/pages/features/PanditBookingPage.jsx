@@ -1,5 +1,5 @@
 import PanditBookingCard from "../../components/CardCompo/PanditBookingCard.jsx";
-import { BabaJi } from "../../assets/index.js"; // Corrected import path
+import { BabaJi } from "../../assets/index.js"; 
 
 const PanditBookingPage = () => {
   return (

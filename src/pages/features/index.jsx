@@ -8,16 +8,18 @@ import {
   VastuSvg,
 } from "../../assets/index.js";
 import { Search, UserIcon } from "lucide-react";
-import PresonalRecommendation from "./PersonalReco.jsx";
-import { Link } from "react-router-dom";
+import PersonalRecommendation from "./PresonalRecommendation.jsx";
+import { useNavigate } from "react-router-dom";
 import VenueBooking from "./VenueBooking.jsx";
 import PaditBookingPage from "./PanditBookingPage.jsx";
 
-const Booknow = () => {
+const FeaturesPage = () => {
   const [isSidebarOpen, setSidebarOpen] = useState(true);
-  const [activePage, setActivePage] = useState("Home");
+  const [activePage, setActivePage] = useState("Personalized Recommendation");
   const [location, setLocation] = useState("");
   const [name, setName] = useState("");
+
+  const navigate = useNavigate();
 
   const toggleSidebar = () => {
     setSidebarOpen(!isSidebarOpen);
@@ -29,14 +31,22 @@ const Booknow = () => {
     console.log("Name:", name);
   };
 
+  const handleHomeClick = () => {
+    navigate("/", { replace: true });
+  }
+
+  const handleBackClick = () => {
+    window.history.back();
+  }
+
   const renderContent = () => {
     switch (activePage) {
-      case "Home":
-        return <div className="p-4">Welcome to the Home!</div>;
+      // case "Home":
+      //   return <div className="p-4">Welcome to the Home!</div>;
       case "Personalized Recommendation":
         return (
           <div className="p-4 h-[100vh] flex items-center justify-center">
-            <PresonalRecommendation />
+            <PersonalRecommendation />
           </div>
         );
       case "Venue Booking":
@@ -50,9 +60,9 @@ const Booknow = () => {
           </div>
         );
       case "Vastu":
-        return <div className="p-4">Access and manage your Vastu.</div>;
+        return <div className="text-black p-4 flex items-center justify-center absolute top-32"><h1>Access and manage your Vastu.</h1></div>;
       default:
-        return <div className="p-4">Select an option from the sidebar.</div>;
+        return <div className="p-4 flex items-center justify-center absolute top-32">Select an option from the sidebar.</div>;
     }
   };
 
@@ -62,15 +72,16 @@ const Booknow = () => {
       <header className="bg-white shadow-md fixed">
         <div className="logoHead w-full h-16 flex items-center justify-between px-4 py-2 z-10 border-b-2">
           {/* Back Icon */}
-          <Link
-            to="/dashboard"
+          <button
+            // to="/dashboard"
+            onClick={handleBackClick}
             aria-label="Go back to home"
-            className="text-gray-600 hover:text-black transition"
+            className="text-gray-600 hover:text-black transition border-0 focus:outline-none"
           >
             <span className="text-3xl bg-white px-5 py-2 rounded-3xl hover:shadow transition">
               &larr; <strong className="text-xl">Back</strong>
             </span>
-          </Link>
+          </button>
 
           <div className="headingName">
             <h1 className="text-4xl font-bold">Subha Labh</h1>
@@ -132,7 +143,8 @@ const Booknow = () => {
         <nav className="flex flex-col h-full">
           <a
             href="#"
-            onClick={() => setActivePage("Home")}
+            // onClick={(hand) => setActivePage("Home")}
+            onClick={handleHomeClick}
             className={`flex items-center px-4 py-2 hover:bg-gray-700 transition-all gap-6 text-white hover:text-blue-500 ${activePage === "Home" ? "bg-gray-700" : ""}`}
           >
             <img className="w-[40px] h-[40px]" src={HomeSvg} alt="Home" />
@@ -194,4 +206,4 @@ const Booknow = () => {
   );
 };
 
-export default Booknow;
+export default FeaturesPage;

@@ -1,22 +1,26 @@
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import Footer from "../homePage/Footer";
 import { ProfileImg } from "../../assets/index.js";
 import { Pencil } from "lucide-react";
 
 function ProfileBox() {
+  const handleBackClick = () => {
+    window.history.back();
+  }
   return (
     <div>
       <header className="profileHead border-b-2 flex justify-between items-center py-3 bg-white px-6 sticky">
         {/* Back Icon */}
-        <Link
-          to="/dashboard"
+        <button
+          // to="/dashboard"
+          onClick={handleBackClick}
           aria-label="Go back to home"
-          className="text-gray-600 hover:text-black transition"
+          className="text-gray-600 hover:text-black transition border-0 focus:outline-none"
         >
           <span className="text-3xl bg-white px-5 py-2 rounded-3xl hover:shadow transition">
             &larr; <strong className="text-xl">Back</strong>
           </span>
-        </Link>
+        </button>
 
         <h1 className="text-3xl font-bold capitalize">Subha Labh</h1>
 

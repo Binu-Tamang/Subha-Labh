@@ -135,7 +135,7 @@ const Header = () => {
           </li>
           <li>
             <a
-              href="/recommendation"
+              href="/feature-page"
               className="flex items-center text-gray-700 hover:text-blue-600"
             >
               <Heart className="!w-[52px]" /> Personalized Recommendation
@@ -143,7 +143,7 @@ const Header = () => {
           </li>
           <li>
             <a
-              href="/venue-booking"
+              href="/feature-page"
               className="flex items-center text-gray-700 hover:text-blue-600"
             >
               <CalendarCheck />
@@ -152,10 +152,18 @@ const Header = () => {
           </li>
           <li>
             <a
-              href="/pandit-booking"
+              href="/feature-page"
               className="flex items-center text-gray-700 hover:text-blue-600"
             >
               <UserRoundCheck /> Pandit Booking
+            </a>
+          </li>
+          <li>
+            <a
+              href="/feature-page"
+              className="flex items-center text-gray-700 hover:text-blue-600"
+            >
+              <UserRoundCheck /> Vaastu
             </a>
           </li>
         </ul>

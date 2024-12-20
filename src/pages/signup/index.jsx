@@ -7,17 +7,22 @@ import {
 } from "../../assets";
 import { Link } from "react-router-dom";
 
+const handleBackClick = () => {
+  window.history.back();
+}
+
 function LoginForm() {
   return (
     <div className="flex flex-col lg:flex-row h-screen">
       {/* Back Icon */}
-      <Link
-        to="/"
-        className="absolute top-6 left-6 text-gray-600 hover:text-black transition"
+      <button
+        // to="/"
+        onClick={handleBackClick}
+        className="absolute top-6 left-6 text-gray-600 hover:text-black transition border-0 focus:outline-none bg-transparent"
       >
         {/* Left Arrow Icon */}
         <span className="text-3xl bg-white px-[20px] py-[6px] rounded-3xl hover:shadow transition">&larr;</span>
-      </Link>
+      </button>
 
       {/* Left Section */}
       <div className="flex-1 flex flex-col justify-center px-6 lg:px-20 bg-white">

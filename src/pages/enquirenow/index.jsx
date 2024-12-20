@@ -1,4 +1,6 @@
-import { Link } from "react-router-dom";
+const handleBackClick = () => {
+  window.history.back();
+};
 
 const OrderNow = () => {
   return (
@@ -9,13 +11,16 @@ const OrderNow = () => {
       }}
     >
       {/* Back Icon */}
-      <Link
-        to="/"
-        className="absolute top-6 left-6 text-gray-600 hover:text-black transition"
+      <button
+        // to="/"
+        onClick={handleBackClick}
+        className="absolute top-6 left-6 text-gray-600 hover:text-black transition border-0 focus:outline-none bg-transparent"
       >
         {/* Left Arrow Icon */}
-        <span className="text-3xl bg-white px-[20px] py-[6px] rounded-3xl hover:shadow transition">&larr;</span>
-      </Link>
+        <span className="text-3xl bg-white px-[20px] py-[6px] rounded-3xl hover:shadow transition">
+          &larr;
+        </span>
+      </button>
 
       <div className="bg-[#F2EBEB] rounded-lg shadow-lg p-8 w-96 border-2 border-white">
         <h2 className="text-center text-2xl font-bold mb-2">Enquire Now!</h2>

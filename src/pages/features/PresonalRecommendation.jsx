@@ -3,9 +3,9 @@ import {
   VastuDetectionImg,
   VenueBookingImg,
 } from "../../assets/index.js";
-import Card from "../../components/CardCompo/Card";
+import Card from "../../components/CardCompo/Card.jsx";
 
-const PresonalRecommendation = () => {
+const PersonalRecommendationPage = () => {
   return (
     <div className="container m-auto">
       <div style={{ display: "flex", justifyContent: "space-around", alignItems: "center" }}>
@@ -32,4 +32,4 @@ const PresonalRecommendation = () => {
   );
 };
 
-export default PresonalRecommendation;
+export default PersonalRecommendationPage;

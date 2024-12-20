@@ -358,3 +358,21 @@ testimonials
   -webkit-box-orient: vertical;
   box-orient: vertical;
 }
+
+@media (max-width: 1024px) {
+  .navbar-brand {
+    display: none; /* Hide navbar links on smaller screens */
+  }
+  .offcanvas {
+    display: block; /* Show hamburger menu button */
+  }
+}
+
+@media (max-width: 768px) {
+  .socialIcons li {
+    margin-bottom: 8px; /* Stack icons for smaller screens */
+  }
+  .loginBox ul {
+    margin-top: 10px;
+  }
+}

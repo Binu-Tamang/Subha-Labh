@@ -11,7 +11,7 @@ const Card = ({ title, description, image, buttonText }) => {
     } else if (buttonText === "Order Now") {
       navigate("/order-now", { replace: true });
     } else {
-      navigate("/book-now", { replace: true });
+      navigate("/book-a-pandit", { replace: true });
     }
   };
   return (

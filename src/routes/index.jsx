@@ -14,6 +14,9 @@ import VenueBooking from "../pages/features/VenueBooking";
 import BookPaditBookingCard from "../pages/features/PanditBookingPage";
 import BookaPandit from "../pages/forms/bookapandit";
 import PersonalRecommendationForm from "../pages/forms/personal-recommendation";
+import SubmittedPage from "../pages/SubmittedPage/index";
+import BookingPandit from "../pages/forms/bookingpandit";
+import BanquetBooking from "../pages/forms/BanquetBooking";
 
 const index = () => {
   return (
@@ -28,13 +31,20 @@ const index = () => {
       <Route path="/order-now" element={<OrderNow />} />
       <Route path="/enquire-now" element={<EnquireNow />} />
       <Route path="/profile" element={<ProfileBox />} />
-      <Route path="/personal-recommendation" element={<PersonalRecommendationPage />} />
+      <Route
+        path="/personal-recommendation"
+        element={<PersonalRecommendationPage />}
+      />
       <Route path="/venue-booking" element={<VenueBooking />} />
       <Route path="/book-pandit-page" element={<BookPaditBookingCard />} />
       <Route path="/book-a-pandit" element={<BookaPandit />} />
-      <Route path="/personal-recommendation-form" element={<PersonalRecommendationForm />} />
-      {/* <Route path="/order-now" element={<OrderNow />} /> */}
-      {/* <Route path="*" element={<Navigate to="/" replace />} /> */}
+      <Route
+        path="/personal-recommendation-form"
+        element={<PersonalRecommendationForm />}
+      />
+      <Route path="/submitted-page" element={<SubmittedPage />} />
+      <Route path="/booking-pandit" element={<BookingPandit />} />
+      <Route path="/banquet-booking" element={<BanquetBooking />} />
     </Routes>
   );
 };

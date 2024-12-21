@@ -7,8 +7,8 @@ import Card from "../../components/CardCompo/Card.jsx";
 
 const PersonalRecommendationPage = () => {
   return (
-    <div className="container m-auto">
-      <div style={{ display: "flex", justifyContent: "space-around", alignItems: "center" }}>
+    <div className="container mx-auto px-4">
+      <div className="flex flex-wrap justify-center gap-1 md:justify-around md:gap-1 items-center">
         <Card
           title="Pandit Booking"
           description="Simplify your rituals with ease! Book experienced pandits for your ceremonies, tailored to your traditions and requirements, at the click of a button."
